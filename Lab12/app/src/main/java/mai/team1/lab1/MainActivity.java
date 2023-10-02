@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,17 +22,26 @@ public class MainActivity extends AppCompatActivity {
         btn_random.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int i, j, arraySize = 3, randomSize = 10;
+                Random newRandom = new Random();
+                int[] array1 = new int[arraySize];
 
-                int[] nums = new int[4];
+                for (i = 0; i < array1.length; ) {
+                    int randomNumber = newRandom.nextInt(randomSize) + 1;
 
-                for(int i = 0; i < nums.length; i++){
-                    nums[i] = (int)(Math.random()*9);
-                    text_random.setText(text_random.getText().toString() + nums[i] );
+                    for (j = 0; j < i; j++) {
+                        if (array1[j] == randomNumber) {
+                            break;
+                        }
+                    }
+                    if (j == i) {
+                        array1[i] = randomNumber;
+                        text_random.setText(text_random.getText().toString() + array1[i]);
+                        i++;
+                    }
+
                 }
-
-
             }
-
         });
     }
 
