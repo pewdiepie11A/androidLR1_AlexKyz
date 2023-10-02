@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         btn_random.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int i, j, arraySize = 3, randomSize = 10;
+                int i, j, arraySize = 4, randomSize = 9;
                 Random newRandom = new Random();
                 int[] array1 = new int[arraySize];
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     if (j == i) {
                         array1[i] = randomNumber;
-                        text_random.setText(text_random.getText().toString() + array1[i]);
+                        text_random.setText(text_random.getText().toString() + array1[i]+"");
                         i++;
                     }
 
