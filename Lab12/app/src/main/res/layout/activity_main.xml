@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#FFFFFF"
     tools:context=".MainActivity">
 
     <View
@@ -19,25 +21,27 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btn0"
         android:layout_width="62dp"
         android:layout_height="67dp"
         android:backgroundTint="#8CB2BD"
+        android:onClick="clicknumber"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.98"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@mipmap/zero0_foreground" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btn1"
         android:layout_width="62dp"
         android:layout_height="67dp"
         android:layout_marginStart="161dp"
         android:layout_marginEnd="118dp"
         android:backgroundTint="#8CB2BD"
+        android:onClick="clicknumber"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.057"
@@ -47,10 +51,11 @@
         app:srcCompat="@mipmap/one1_foreground" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/btn2"
         android:layout_width="62dp"
         android:layout_height="67dp"
         android:backgroundTint="#8CB2BD"
+        android:onClick="clicknumber"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.65"
@@ -60,10 +65,11 @@
         app:srcCompat="@mipmap/two2_foreground" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/btn3"
         android:layout_width="62dp"
         android:layout_height="67dp"
         android:backgroundTint="#8CB2BD"
+        android:onClick="clicknumber"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.828"
@@ -73,10 +79,11 @@
         app:srcCompat="@mipmap/three3_foreground" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/btn4"
         android:layout_width="62dp"
         android:layout_height="67dp"
         android:backgroundTint="#8CB2BD"
+        android:onClick="clicknumber"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
@@ -86,10 +93,11 @@
         app:srcCompat="@mipmap/four4_foreground" />
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/btn5"
         android:layout_width="62dp"
         android:layout_height="67dp"
         android:backgroundTint="#8CB2BD"
+        android:onClick="clicknumber"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.65"
@@ -99,10 +107,11 @@
         app:srcCompat="@mipmap/five5_foreground" />
 
     <ImageButton
-        android:id="@+id/imageButton7"
+        android:id="@+id/btn6"
         android:layout_width="62dp"
         android:layout_height="67dp"
         android:backgroundTint="#8CB2BD"
+        android:onClick="clicknumber"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.828"
@@ -112,10 +121,11 @@
         app:srcCompat="@mipmap/six6_foreground" />
 
     <ImageButton
-        android:id="@+id/imageButton8"
+        android:id="@+id/btn7"
         android:layout_width="62dp"
         android:layout_height="67dp"
         android:backgroundTint="#8CB2BD"
+        android:onClick="clicknumber"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.472"
@@ -125,10 +135,11 @@
         app:srcCompat="@mipmap/seven7_foreground" />
 
     <ImageButton
-        android:id="@+id/imageButton10"
+        android:id="@+id/btn8"
         android:layout_width="62dp"
         android:layout_height="67dp"
         android:backgroundTint="#8CB2BD"
+        android:onClick="clicknumber"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.65"
@@ -138,10 +149,11 @@
         app:srcCompat="@mipmap/eight8_foreground" />
 
     <ImageButton
-        android:id="@+id/imageButton11"
+        android:id="@+id/btn9"
         android:layout_width="62dp"
         android:layout_height="67dp"
         android:backgroundTint="#8CB2BD"
+        android:onClick="clicknumber"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.828"
@@ -176,10 +188,48 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.901" />
 
-    <ImageView
-        android:id="@+id/imageView"
+    <TextView
+        android:id="@+id/text_random"
+        android:layout_width="87dp"
+        android:layout_height="29dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.005"
+        android:maxLength="4"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.132"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.115" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.115" />
+
+    <ImageButton
+        android:id="@+id/btn_delete"
         android:layout_width="56dp"
         android:layout_height="67dp"
+        android:backgroundTint="#8CB2BD"
+        android:onClick="delclick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.988"
@@ -188,75 +238,70 @@
         app:layout_constraintVertical_bias="0.735"
         app:srcCompat="@mipmap/delete_foreground" />
 
-    <TextView
-        android:id="@+id/textView"
+    <EditText
+        android:id="@+id/number_1"
         android:layout_width="52dp"
         android:layout_height="67dp"
         android:background="#FFFFFF"
-        android:text="0"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:inputType="none"
         android:textAlignment="center"
-        android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609" />
+        app:layout_constraintVertical_bias="0.609"
+        android:maxLength="1"/>
 
-    <TextView
-        android:id="@+id/textView4"
+    <EditText
+        android:id="@+id/number_2"
         android:layout_width="52dp"
         android:layout_height="67dp"
         android:background="#FFFFFF"
-        android:text="0"
+        android:backgroundTint="#FFFFFF"
+        android:ems="10"
+        android:inputType="text"
         android:textAlignment="center"
-        android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.356"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609" />
+        app:layout_constraintVertical_bias="0.609"
+        android:maxLength="1"/>
 
-    <TextView
-        android:id="@+id/textView5"
+    <EditText
+        android:id="@+id/number_3"
         android:layout_width="52dp"
         android:layout_height="67dp"
-        android:background="#F6F6F6"
-        android:text="0"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:inputType="text"
         android:textAlignment="center"
-        android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.632"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609" />
+        app:layout_constraintVertical_bias="0.609"
+        android:maxLength="1"/>
 
-    <TextView
-        android:id="@+id/textView6"
+    <EditText
+        android:id="@+id/number_4"
         android:layout_width="52dp"
         android:layout_height="67dp"
         android:background="#FFFFFF"
-        android:text="0"
+        android:ems="10"
+        android:inputType="text"
         android:textAlignment="center"
-        android:textSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintHorizontal_bias="0.916"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609" />
-
-    <TextView
-        android:id="@+id/text_random"
-        android:layout_width="228dp"
-        android:layout_height="63dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.305"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.083" />
+        app:layout_constraintVertical_bias="0.609"
+        android:maxLength="1"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
