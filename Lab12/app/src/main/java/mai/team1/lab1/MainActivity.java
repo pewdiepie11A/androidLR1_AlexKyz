@@ -1,6 +1,5 @@
 package mai.team1.lab1;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
