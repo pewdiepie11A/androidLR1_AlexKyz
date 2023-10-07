@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import java.util.Random;
 import android.widget.ImageButton;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
     EditText number3;
     EditText number4;
     TextView text_random;
+    TextView text_input;
     Button btn_random;
+    Button btn_input;
     ImageButton btn1;
     ImageButton btn0;
     ImageButton btn2;
@@ -29,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton btn7;
     ImageButton btn8;
     ImageButton btn9;
+
 
 
 
@@ -62,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
 
         text_random = findViewById(R.id.text_random);
         btn_random = findViewById(R.id.btn_random);
+
+        btn_input = findViewById(R.id.btn_input);
+        text_input = findViewById(R.id.text_input);
+
 
 
         btn_random.setOnClickListener(new View.OnClickListener() {
@@ -237,6 +245,27 @@ public class MainActivity extends AppCompatActivity {
                 } else if (number4.getText().toString().isEmpty()) {
                     number4.setText("0");
                 }
+            }
+        });
+
+        btn_input.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                ArrayList<String> valuesArray = new ArrayList<>();
+
+                String value1 = number1.getText().toString();
+                String value2 = number2.getText().toString();
+                String value3 = number3.getText().toString();
+                String value4 = number4.getText().toString();
+
+                valuesArray.add(value1);
+                valuesArray.add(value2);
+                valuesArray.add(value3);
+                valuesArray.add(value4);
+
+
+                text_input.setText(text_input.getText().toString() + value1 + value2 + value3+ value4);
             }
         });
 
