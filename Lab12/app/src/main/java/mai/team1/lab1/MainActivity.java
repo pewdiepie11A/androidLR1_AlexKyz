@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
         btn3 = findViewById(R.id.btn3);
@@ -102,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                int i, j, arraySize = 4, randomSize = 9;
+                int i, j, randomSize = 9;
                 Random newRandom = new Random();
 
                 for (i = 0; i < random.length; ) {
@@ -114,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                     if (j == i) {
-
                         random[i] = randomNumber;
                         i++;
                     }
@@ -282,7 +280,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 ArrayList<String> valuesArray = new ArrayList<>();
+                text_result6.setText("");
 
+                if (number1.getText().toString().isEmpty() || number2.getText().toString().isEmpty() || number3.getText().toString().isEmpty() || number4.getText().toString().isEmpty()) {text_result6.setText(text_result6.getText().toString() + "Введите число без пропусков.");}
+                else{
                 int num1 = Integer.parseInt(number1.getText().toString());
                 int num2 = Integer.parseInt(number2.getText().toString());
                 int num3 = Integer.parseInt(number3.getText().toString());
@@ -298,69 +299,76 @@ public class MainActivity extends AppCompatActivity {
                 valuesArray.add(value3);
                 valuesArray.add(value4);
 
-                human[0] = num1;
-                human[1] = num2;
-                human[2] = num3;
-                human[3] = num4;
+                    human[0] = num1;
+                    human[1] = num2;
+                    human[2] = num3;
+                    human[3] = num4;
 
 
-                int[] arr = new int[2];
-                int cow = 0;
-                int bull = 0;
-                for (int i = 0; i < 4; i++) {
-                    for (int j = 0; j < 4; j++) {
+                    int[] arr = new int[2];
+                    int cow = 0;
+                    int bull = 0;
+                    for (int i = 0; i < 4; i++) {
+                        for (int j = 0; j < 4; j++) {
 
-                        if (random[i] == human[j]) {
-                            if (i == j) bull++;
-                            else cow++;
+                            if (random[i] == human[j]) {
+                                if (i == j) bull++;
+                                else cow++;
+                            }
                         }
                     }
-                }
 
-                arr[0] = cow;
-                arr[1] = bull;
+                    arr[0] = cow;
+                    arr[1] = bull;
 
 
-                if (bull == 4)
-                    {text_result6.setText(text_result6.getText().toString() + "Вы отгадали число");
-                        btn_random.setEnabled(false);
-                        btn_input.setEnabled(false);
-                        if (text_input1.getText().toString().isEmpty()) {
-                        text_input1.setText(text_input1.getText().toString() + value1 + value2 + value3+ value4);
-                        text_result1.setText(text_result1.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
-                    } else if (text_input2.getText().toString().isEmpty()) {
-                        text_input2.setText(text_input2.getText().toString() + value1 + value2 + value3+ value4);
-                        text_result2.setText(text_result2.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
-                    } else if (text_input3.getText().toString().isEmpty()) {
-                        text_input3.setText(text_input3.getText().toString() + value1 + value2 + value3+ value4);
-                        text_result3.setText(text_result3.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
-                    }else if (text_input4.getText().toString().isEmpty()) {
-                        text_input4.setText(text_input4.getText().toString() + value1 + value2 + value3+ value4);
-                        text_result4.setText(text_result4.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
-                    }else if (text_input5.getText().toString().isEmpty()) {
-                        text_input5.setText(text_input5.getText().toString() + value1 + value2 + value3+ value4);
-                        text_result5.setText(text_result5.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
+                    if (num1 != num2 && num1 != num3 && num1 != num4 && num2 != num1 && num2 != num3 && num2 != num4 && num3 != num1 && num3 != num2 && num3 != num4 && num4 != num1 && num4 != num2 && num4 != num3 && num1 != 0) {
+                        {
+                            if (bull == 4) {
+                                text_result6.setText(text_result6.getText().toString() + "Вы отгадали число");
+                                btn_random.setEnabled(false);
+                                btn_input.setEnabled(false);
+                                if (text_input1.getText().toString().isEmpty()) {
+                                    text_input1.setText(text_input1.getText().toString() + value1 + value2 + value3 + value4);
+                                    text_result1.setText(text_result1.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
+                                } else if (text_input2.getText().toString().isEmpty()) {
+                                    text_input2.setText(text_input2.getText().toString() + value1 + value2 + value3 + value4);
+                                    text_result2.setText(text_result2.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
+                                } else if (text_input3.getText().toString().isEmpty()) {
+                                    text_input3.setText(text_input3.getText().toString() + value1 + value2 + value3 + value4);
+                                    text_result3.setText(text_result3.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
+                                } else if (text_input4.getText().toString().isEmpty()) {
+                                    text_input4.setText(text_input4.getText().toString() + value1 + value2 + value3 + value4);
+                                    text_result4.setText(text_result4.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
+                                } else if (text_input5.getText().toString().isEmpty()) {
+                                    text_input5.setText(text_input5.getText().toString() + value1 + value2 + value3 + value4);
+                                    text_result5.setText(text_result5.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
+                                }
+                            } else {
+                                if (text_input1.getText().toString().isEmpty()) {
+                                    text_input1.setText(text_input1.getText().toString() + value1 + value2 + value3 + value4);
+                                    text_result1.setText(text_result1.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
+                                } else if (text_input2.getText().toString().isEmpty()) {
+                                    text_input2.setText(text_input2.getText().toString() + value1 + value2 + value3 + value4);
+                                    text_result2.setText(text_result2.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
+                                } else if (text_input3.getText().toString().isEmpty()) {
+                                    text_input3.setText(text_input3.getText().toString() + value1 + value2 + value3 + value4);
+                                    text_result3.setText(text_result3.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
+                                } else if (text_input4.getText().toString().isEmpty()) {
+                                    text_input4.setText(text_input4.getText().toString() + value1 + value2 + value3 + value4);
+                                    text_result4.setText(text_result4.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
+                                } else if (text_input5.getText().toString().isEmpty()) {
+                                    text_input5.setText(text_input5.getText().toString() + value1 + value2 + value3 + value4);
+                                    text_result5.setText(text_result5.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
+                                    btn_input.setEnabled(false);
+                                    text_result6.setText(text_result6.getText().toString() + "Вы не отгадали число.\nНачните новую игру.");
+                                }
+                            }
+                        }
+                    } else {
+                        text_result6.setText(text_result6.getText().toString() + "Введите число не содержащее одинаковых цифр, а также не начинающееся на 0");
                     }
-                    }else {if (text_input1.getText().toString().isEmpty()) {
-                        text_input1.setText(text_input1.getText().toString() + value1 + value2 + value3+ value4);
-                        text_result1.setText(text_result1.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
-                    } else if (text_input2.getText().toString().isEmpty()) {
-                        text_input2.setText(text_input2.getText().toString() + value1 + value2 + value3+ value4);
-                        text_result2.setText(text_result2.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
-                    } else if (text_input3.getText().toString().isEmpty()) {
-                        text_input3.setText(text_input3.getText().toString() + value1 + value2 + value3+ value4);
-                        text_result3.setText(text_result3.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
-                    }else if (text_input4.getText().toString().isEmpty()) {
-                        text_input4.setText(text_input4.getText().toString() + value1 + value2 + value3+ value4);
-                        text_result4.setText(text_result4.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
-                    }else if (text_input5.getText().toString().isEmpty()) {
-                        text_input5.setText(text_input5.getText().toString() + value1 + value2 + value3+ value4);
-                        text_result5.setText(text_result5.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1]);
-                        btn_input.setEnabled(false);
-                        text_result6.setText(text_result6.getText().toString() + "Вы не отгадали число.\nНачните новую игру.");
-                    }
-                }
-
+            }
             }
         });
 
