@@ -45,8 +45,12 @@ public class MainActivity extends AppCompatActivity {
     ImageButton btn8;
     ImageButton btn9;
 
+
+    int currentEditTextId = R.id.number_1;
+
     int[] random = new int[4];
     int[] human = new int[4];
+
 
 
 
@@ -96,6 +100,54 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        View.OnClickListener onClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+
+                EditText currentEditText = findViewById(currentEditTextId);
+
+                int id = view.getId();
+
+                if (id == R.id.btn1) {
+                    currentEditText.setText("1");
+                } else if (id == R.id.btn2) {
+                    currentEditText.setText("2");
+                } else if (id == R.id.btn3) {
+                    currentEditText.setText("3");
+                } else if (id == R.id.btn4) {
+                    currentEditText.setText("4");
+                } else if (id == R.id.btn5) {
+                    currentEditText.setText("5");
+                } else if (id == R.id.btn6) {
+                    currentEditText.setText("6");
+                } else if (id == R.id.btn7) {
+                    currentEditText.setText("7");
+                } else if (id == R.id.btn8) {
+                    currentEditText.setText("8");
+                } else if (id == R.id.btn9) {
+                    currentEditText.setText("9");
+                } else if (id == R.id.btn0) {
+                    currentEditText.setText("0");
+                }
+
+                currentEditTextId = getNextEditTextId(currentEditTextId);
+            }
+        };
+;
+        btn1.setOnClickListener(onClickListener);
+        btn2.setOnClickListener(onClickListener);
+        btn3.setOnClickListener(onClickListener);
+        btn4.setOnClickListener(onClickListener);
+        btn5.setOnClickListener(onClickListener);
+        btn6.setOnClickListener(onClickListener);
+        btn7.setOnClickListener(onClickListener);
+        btn8.setOnClickListener(onClickListener);
+        btn9.setOnClickListener(onClickListener);
+        btn0.setOnClickListener(onClickListener);
+
 
         btn_random.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,157 +173,6 @@ public class MainActivity extends AppCompatActivity {
                 view.setEnabled(false);
                 btn_input.setEnabled(true);
                 btn_random2.setEnabled(true);
-            }
-        });
-
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (number1.getText().toString().isEmpty()) {
-                    number1.setText("1");
-                } else if (number2.getText().toString().isEmpty()) {
-                    number2.setText("1");
-                } else if (number3.getText().toString().isEmpty()) {
-                    number3.setText("1");
-                } else if (number4.getText().toString().isEmpty()) {
-                    number4.setText("1");
-                }
-            }
-        });
-
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (number1.getText().toString().isEmpty()) {
-                    number1.setText("2");
-                } else if (number2.getText().toString().isEmpty()) {
-                    number2.setText("2");
-                } else if (number3.getText().toString().isEmpty()) {
-                    number3.setText("2");
-                } else if (number4.getText().toString().isEmpty()) {
-                    number4.setText("2");
-                }
-            }
-        });
-
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (number1.getText().toString().isEmpty()) {
-                    number1.setText("3");
-                } else if (number2.getText().toString().isEmpty()) {
-                    number2.setText("3");
-                } else if (number3.getText().toString().isEmpty()) {
-                    number3.setText("3");
-                } else if (number4.getText().toString().isEmpty()) {
-                    number4.setText("3");
-                }
-            }
-        });
-
-        btn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (number1.getText().toString().isEmpty()) {
-                    number1.setText("4");
-                } else if (number2.getText().toString().isEmpty()) {
-                    number2.setText("4");
-                } else if (number3.getText().toString().isEmpty()) {
-                    number3.setText("4");
-                } else if (number4.getText().toString().isEmpty()) {
-                    number4.setText("4");
-                }
-            }
-        });
-
-        btn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (number1.getText().toString().isEmpty()) {
-                    number1.setText("5");
-                } else if (number2.getText().toString().isEmpty()) {
-                    number2.setText("5");
-                } else if (number3.getText().toString().isEmpty()) {
-                    number3.setText("5");
-                } else if (number4.getText().toString().isEmpty()) {
-                    number4.setText("5");
-                }
-            }
-        });
-
-        btn6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (number1.getText().toString().isEmpty()) {
-                    number1.setText("6");
-                } else if (number2.getText().toString().isEmpty()) {
-                    number2.setText("6");
-                } else if (number3.getText().toString().isEmpty()) {
-                    number3.setText("6");
-                } else if (number4.getText().toString().isEmpty()) {
-                    number4.setText("6");
-                }
-            }
-        });
-
-        btn7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (number1.getText().toString().isEmpty()) {
-                    number1.setText("7");
-                } else if (number2.getText().toString().isEmpty()) {
-                    number2.setText("7");
-                } else if (number3.getText().toString().isEmpty()) {
-                    number3.setText("7");
-                } else if (number4.getText().toString().isEmpty()) {
-                    number4.setText("7");
-                }
-            }
-        });
-
-        btn8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (number1.getText().toString().isEmpty()) {
-                    number1.setText("8");
-                } else if (number2.getText().toString().isEmpty()) {
-                    number2.setText("8");
-                } else if (number3.getText().toString().isEmpty()) {
-                    number3.setText("8");
-                } else if (number4.getText().toString().isEmpty()) {
-                    number4.setText("8");
-                }
-            }
-        });
-
-        btn9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (number1.getText().toString().isEmpty()) {
-                    number1.setText("9");
-                } else if (number2.getText().toString().isEmpty()) {
-                    number2.setText("9");
-                } else if (number3.getText().toString().isEmpty()) {
-                    number3.setText("9");
-                } else if (number4.getText().toString().isEmpty()) {
-                    number4.setText("9");
-                }
-            }
-        });
-
-        btn0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (number1.getText().toString().isEmpty()) {
-                    number1.setText("0");
-                } else if (number2.getText().toString().isEmpty()) {
-                    number2.setText("0");
-                } else if (number3.getText().toString().isEmpty()) {
-                    number3.setText("0");
-                } else if (number4.getText().toString().isEmpty()) {
-                    number4.setText("0");
-                }
             }
         });
 
@@ -401,6 +302,19 @@ public class MainActivity extends AppCompatActivity {
         btn_random.setEnabled(true);
         btn_random2.setEnabled(false);
         btn_input.setEnabled(false);
+    }
+
+    private int getNextEditTextId(int currentEditTextId) {
+        if (currentEditTextId == R.id.number_1) {
+            return R.id.number_2;
+        } else if (currentEditTextId == R.id.number_2) {
+            return R.id.number_3;
+        }else if (currentEditTextId == R.id.number_3) {
+            return R.id.number_4;
+        }
+        else {
+            return R.id.number_1; // Вернуть исходное значение, если текущий EditText последний
+        }
     }
 
 }
