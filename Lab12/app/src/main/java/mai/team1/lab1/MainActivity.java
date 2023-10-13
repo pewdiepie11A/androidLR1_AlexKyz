@@ -34,16 +34,16 @@ public class MainActivity extends AppCompatActivity {
     Button btn_random;
     Button btn_random2;
     Button btn_input;
-    ImageButton btn1;
-    ImageButton btn0;
-    ImageButton btn2;
-    ImageButton btn3;
-    ImageButton btn4;
-    ImageButton btn5;
-    ImageButton btn6;
-    ImageButton btn7;
-    ImageButton btn8;
-    ImageButton btn9;
+    Button btn1;
+    Button btn0;
+    Button btn2;
+    Button btn3;
+    Button btn4;
+    Button btn5;
+    Button btn6;
+    Button btn7;
+    Button btn8;
+    Button btn9;
 
 
     int currentEditTextId = R.id.number_1;
@@ -97,57 +97,6 @@ public class MainActivity extends AppCompatActivity {
         text_input3 = findViewById(R.id.text_input3);
         text_input4 = findViewById(R.id.text_input4);
         text_input5 = findViewById(R.id.text_input5);
-
-
-
-        View.OnClickListener onClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-
-
-                EditText currentEditText = findViewById(currentEditTextId);
-
-                int id = view.getId();
-
-                if (id == R.id.btn1) {
-                    currentEditText.setText("1");
-                } else if (id == R.id.btn2) {
-                    currentEditText.setText("2");
-                } else if (id == R.id.btn3) {
-                    currentEditText.setText("3");
-                } else if (id == R.id.btn4) {
-                    currentEditText.setText("4");
-                } else if (id == R.id.btn5) {
-                    currentEditText.setText("5");
-                } else if (id == R.id.btn6) {
-                    currentEditText.setText("6");
-                } else if (id == R.id.btn7) {
-                    currentEditText.setText("7");
-                } else if (id == R.id.btn8) {
-                    currentEditText.setText("8");
-                } else if (id == R.id.btn9) {
-                    currentEditText.setText("9");
-                } else if (id == R.id.btn0) {
-                    currentEditText.setText("0");
-                }
-
-                currentEditTextId = getNextEditTextId(currentEditTextId);
-            }
-        };
-;
-        btn1.setOnClickListener(onClickListener);
-        btn2.setOnClickListener(onClickListener);
-        btn3.setOnClickListener(onClickListener);
-        btn4.setOnClickListener(onClickListener);
-        btn5.setOnClickListener(onClickListener);
-        btn6.setOnClickListener(onClickListener);
-        btn7.setOnClickListener(onClickListener);
-        btn8.setOnClickListener(onClickListener);
-        btn9.setOnClickListener(onClickListener);
-        btn0.setOnClickListener(onClickListener);
-
 
         btn_random.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -304,18 +253,16 @@ public class MainActivity extends AppCompatActivity {
         btn_input.setEnabled(false);
     }
 
-    private int getNextEditTextId(int currentEditTextId) {
-        if (currentEditTextId == R.id.number_1) {
-            return R.id.number_2;
-        } else if (currentEditTextId == R.id.number_2) {
-            return R.id.number_3;
-        }else if (currentEditTextId == R.id.number_3) {
-            return R.id.number_4;
-        }
-        else {
-            return R.id.number_1; // Вернуть исходное значение, если текущий EditText последний
-        }
+    public void vvodChisla(View view) {
+        String buttonText = ((Button) view).getText().toString();
+        if (number1.getText().toString().isEmpty()) {
+            number1.setText(buttonText);
+        } else if (number2.getText().toString().isEmpty()) {
+            number2.setText(buttonText);
+        } else if (number3.getText().toString().isEmpty()) {
+            number3.setText(buttonText);
+        } else if (number4.getText().toString().isEmpty()) {
+            number4.setText(buttonText);}
     }
-
 }
 
