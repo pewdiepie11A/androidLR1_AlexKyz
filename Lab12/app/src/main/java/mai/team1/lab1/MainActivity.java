@@ -45,11 +45,9 @@ public class MainActivity extends AppCompatActivity {
     ImageButton btn8;
     ImageButton btn9;
 
-
-    int currentEditTextId = R.id.number_1;
-
     int[] random = new int[4];
     int[] human = new int[4];
+
 
 
 
@@ -100,43 +98,33 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
         View.OnClickListener onClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ImageButton[] buttons = {btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0};
+
+                int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
 
 
+                for (int i = 0; i < buttons.length; i++) {
+                    final int number = numbers[i];
+                    buttons[i].setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            EditText currentEditText = getCurrentEditText();
 
-
-                EditText currentEditText = findViewById(currentEditTextId);
-
-                int id = view.getId();
-
-                if (id == R.id.btn1) {
-                    currentEditText.setText("1");
-                } else if (id == R.id.btn2) {
-                    currentEditText.setText("2");
-                } else if (id == R.id.btn3) {
-                    currentEditText.setText("3");
-                } else if (id == R.id.btn4) {
-                    currentEditText.setText("4");
-                } else if (id == R.id.btn5) {
-                    currentEditText.setText("5");
-                } else if (id == R.id.btn6) {
-                    currentEditText.setText("6");
-                } else if (id == R.id.btn7) {
-                    currentEditText.setText("7");
-                } else if (id == R.id.btn8) {
-                    currentEditText.setText("8");
-                } else if (id == R.id.btn9) {
-                    currentEditText.setText("9");
-                } else if (id == R.id.btn0) {
-                    currentEditText.setText("0");
+                            if (currentEditText != null && currentEditText.getText().length() < 1) {
+                                currentEditText.setText(String.valueOf(number));
+                                currentEditText.requestFocus();
+                            }
+                        }
+                    });
                 }
-
-                currentEditTextId = getNextEditTextId(currentEditTextId);
             }
         };
-;
+
         btn1.setOnClickListener(onClickListener);
         btn2.setOnClickListener(onClickListener);
         btn3.setOnClickListener(onClickListener);
@@ -303,19 +291,18 @@ public class MainActivity extends AppCompatActivity {
         btn_random2.setEnabled(false);
         btn_input.setEnabled(false);
     }
+                private EditText getCurrentEditText() {
+                    if ( number1.getText().length() < 1) {
+                        return number1;
+                    } else if (number2.getText().length() < 1) {
+                        return number2;
+                    } else if (number3.getText().length() < 1) {
+                        return number3;
+                    } else if (number4.getText().length() < 1) {
+                        return number4;
+                    }
+                    return null;
+                }
 
-    private int getNextEditTextId(int currentEditTextId) {
-        if (currentEditTextId == R.id.number_1) {
-            return R.id.number_2;
-        } else if (currentEditTextId == R.id.number_2) {
-            return R.id.number_3;
-        }else if (currentEditTextId == R.id.number_3) {
-            return R.id.number_4;
-        }
-        else {
-            return R.id.number_1; // Вернуть исходное значение, если текущий EditText последний
-        }
-    }
 
 }
-
