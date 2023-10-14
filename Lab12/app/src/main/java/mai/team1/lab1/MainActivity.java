@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import java.util.Random;
-import android.widget.ImageButton;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     EditText number3;
     EditText number4;
     TextView text_random;
+    TextView Attempts;
     TextView text_input1;
     TextView text_result1;
     TextView text_result6;
@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     int[] random = new int[4];
     int[] human = new int[4];
     int count=0;
+    int MaxAttempts = 5;
 
 
 
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         btn_input.setEnabled(false);
 
         text_random = findViewById(R.id.text_random);
+        Attempts = findViewById(R.id.Attempts);
         text_result1 = findViewById(R.id.text_result1);
         text_result6 = findViewById(R.id.text_result6);
         text_input1 = findViewById(R.id.text_input1);
@@ -103,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 text_random.setText(text_random.getText().toString() + random[0] + random[1] + random[2] + random[3] + "");
+                Attempts.setText("Попыток: " + MaxAttempts + "/" + MaxAttempts);
                 view.setEnabled(false);
                 btn_input.setEnabled(true);
                 btn_random2.setEnabled(true);
@@ -156,19 +159,20 @@ public class MainActivity extends AppCompatActivity {
                     arr[1] = bull;
 
                     count++;
-
+                    Attempts.setText("Попыток: " + (MaxAttempts-count) + "/" + MaxAttempts);
                     if (num1 != num2 && num1 != num3 && num1 != num4 && num2 != num1 && num2 != num3 && num2 != num4 && num3 != num1 && num3 != num2 && num3 != num4 && num4 != num1 && num4 != num2 && num4 != num3 && num1 != 0) {
                         {
                             if (bull == 4) {
                                 text_result6.setText(text_result6.getText().toString() + "Вы отгадали число");
                                 btn_random.setEnabled(false);
                                 btn_input.setEnabled(false);
+                                Attempts.setText("");
                                 text_input1.setText(text_input1.getText().toString() + value1 + value2 + value3 + value4 + "" + "\n");
                                 text_result1.setText(text_result1.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1] + "\n" );
                             } else {
                                 text_input1.setText(text_input1.getText().toString() + value1 + value2 + value3 + value4  + "" + "\n");
                                 text_result1.setText(text_result1.getText().toString() + "Коровы: " + arr[0] + "     " + "Быки: " + arr[1] + "" + "\n");
-                                if(count==5){  text_result6.setText(text_result6.getText().toString() + "Вы не отгадали число.\nНачните новую игру.");
+                                if(count == MaxAttempts){  text_result6.setText(text_result6.getText().toString() + "Вы не отгадали число.\nНачните новую игру.");
                                     btn_input.setEnabled(false);
                                 }
                             }
@@ -194,6 +198,7 @@ public class MainActivity extends AppCompatActivity {
         number2.setText("");
         number3.setText("");
         number4.setText("");
+        Attempts.setText("");
         count = 0;
         text_input1.setText("");
         text_result1.setText("");
